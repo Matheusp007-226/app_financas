@@ -1,16 +1,24 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
+import { NavigationContainerRefContext } from '@react-navigation/native';
 
-export default function Actions() {
+export default function Actions({navigation}) {
  return (
    <ScrollView style={styles.container} horizontal={true} showsHorizontalScrollIndicator={false}>
-        <TouchableOpacity style={styles.actionButton}>
+        <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate("Detalhe")}>
              <View style={styles.areaButton}>
                     <AntDesign name="addfolder" size={26} color="#000" />
              </View>
              <Text style={styles.labelButton}>Entradas</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.actionButton}>
+             <View style={styles.areaButton}>
+                    <MaterialCommunityIcons name="exit-run" size={26} color="#000" />
+             </View>
+             <Text style={styles.labelButton}>Saídas</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.actionButton}>

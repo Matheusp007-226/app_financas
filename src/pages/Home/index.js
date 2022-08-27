@@ -29,14 +29,14 @@ const list = [
     }
 ]
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     <View style={styles.container}>
       <Header name= 'Matheus Pimentel'/>
 
       <Balance saldo="9.250,00" gastos="-1.530,00"/>
 
-      <Actions />
+      <Actions navigation={navigation}/>
 
       <Text style={styles.title}>Últimas movimentações</Text>
 
